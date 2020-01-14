@@ -22,6 +22,7 @@ body {
 .cell:nth-child(3n + 1) {
   border-left: none;
 }
+
 .cell:nth-child(3n + 3) {
   border-right: none;
 }
@@ -58,6 +59,7 @@ body {
 .cell.circle {
   cursor: not-allowed;
 }
+
 .cell.circle::before {
   background-color: black;
 }
@@ -76,9 +78,12 @@ body {
   background-color: lightgrey;
 }
 
-.board.x .cell:not(.x):not(.circle):hover::after,
 .board.circle .cell:not(.x):not(.circle):hover::after {
   background-color: white;
+}
+
+.board.x .cell:not(.x):not(.circle):hover::after {
+  background-color: lightgrey;
 }
 
 .cell.x::before,
@@ -90,6 +95,7 @@ body {
   width: calc(var(--mark-size) * 0.15);
   height: var(--mark-size);
 }
+
 .cell.x::after,
 .board.x .cell:not(.x):not(.circle):hover::after {
   transform: rotate(45deg);
@@ -116,6 +122,7 @@ body {
   width: var(--mark-size);
   height: var(--mark-size);
 }
+
 .cell.circle::after,
 .board.circle .cell:not(.x):not(.circle):hover::after {
   width: calc(var(--mark-size) * 0.7);
