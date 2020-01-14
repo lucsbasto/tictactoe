@@ -14,17 +14,25 @@ const winningMessageTextElement = document.querySelector('[data-winning-message-
 const cellElements = document.querySelectorAll('[data-cell]');
 const winningMessage = document.getElementById('winningMessage');
 const board = document.getElementById('board');
+const restartButton = document.getElementById('restartButton');
 let circleTurn;
 
 startGame();
 
+restartButton.addEventListener('click', startGame)
+
+
 function startGame() {
   circleTurn = false;
   cellElements.forEach(cell => {
+    cell.classList.remove(X_CLASS)
+    cell.classList.remove(CIRCLE_CLASS)
+    cell.removeEventListener('click', handleClick)
     cell.addEventListener('click', handleClick, {
       once: true
     });
   });
+  winningMessage.classList.remove('show');
   setBoardHoverClass();
 }
 
