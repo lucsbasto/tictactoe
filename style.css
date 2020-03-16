@@ -5,7 +5,7 @@
 }
 
 :root {
-  --cell-size: 250px;
+  --cell-size: 20vh;
   --mark-size: calc(var(--cell-size) * 0.9);
 }
 
